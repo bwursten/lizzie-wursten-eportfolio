@@ -118,30 +118,9 @@ main {
   margin-bottom: 3.25rem;
 }
 
-.profile-photo-placeholder {
-  width: 165px;
-  height: 165px;
-  border-radius: 50%;
-  background-color: var(--bg-primary);
-  border: 3px solid var(--accent-sage);
-  box-shadow: 0 6px 18px rgba(60, 45, 30, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0;
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 500;
-  overflow: hidden;
-}
 
-.profile-photo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
+
 
 .about-content h1 {
   font-size: 2.35rem;
@@ -531,4 +510,28 @@ main {
   .outcome-divider-banner h1 {
     font-size: 1.65rem;
   }
+}
+
+
+.profile-photo-placeholder {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 3px solid var(--accent-sage);
+  box-shadow: 0 6px 18px rgba(60, 45, 30, 0.12);
+  display: block; /* changed from flex to block to avoid potential flexbox resizing/shrink issues */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
 }
