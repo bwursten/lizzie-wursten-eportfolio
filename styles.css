@@ -1,17 +1,22 @@
-/* Minimalist Modern Stylesheet - Lizzie Wursten ePortfolio */
+/* Warm & Academic Stylesheet - Lizzie Wursten ePortfolio */
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f7f7f8;
-  --bg-tertiary: #ededf0;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --text-muted: #777777;
-  --border-color: #e2e2e5;
-  --accent-color: #111111;
-  --accent-hover: #333333;
+  --bg-primary: #fbf8f3;        /* Soft warm cream */
+  --bg-card: #ffffff;           /* Crisp ivory/white for cards */
+  --bg-secondary: #f2ece1;      /* Warm sand / parchment */
+  --bg-tertiary: #e6dec8;       /* Deeper warm stone */
+  --text-primary: #2c2623;      /* Deep espresso / warm charcoal */
+  --text-secondary: #5c5346;    /* Muted walnut brown */
+  --text-muted: #847968;        /* Warm taupe */
+  --border-color: #dfd7c8;      /* Subtle warm border */
+  --accent-sage: #3d5a45;       /* Deep academic sage green */
+  --accent-sage-hover: #2d4434; /* Darker sage for hover */
+  --accent-terracotta: #b85d3b; /* Warm terracotta highlight */
+  --accent-terracotta-soft: #f5e6df;
   --max-width: 1040px;
-  --radius: 8px;
+  --radius: 10px;
   --transition: 0.2s ease-in-out;
+  --font-serif: "Georgia", "Times New Roman", Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -21,20 +26,24 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+h1, h2, h3, .site-title {
+  font-family: var(--font-serif);
+}
+
 /* Header & Navigation */
 .site-header {
   border-bottom: 1px solid var(--border-color);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(251, 248, 243, 0.95);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -53,16 +62,16 @@ body {
 }
 
 .site-title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  color: var(--accent-sage);
   text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.35rem;
   list-style: none;
   flex-wrap: wrap;
 }
@@ -70,20 +79,21 @@ body {
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 500;
   transition: color var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text-primary);
+  color: var(--accent-terracotta);
 }
 
 .nav-links a.active {
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
+  font-weight: 600;
 }
 
 /* Main Container */
@@ -98,27 +108,29 @@ main {
 /* Hero / About Me Section */
 .about-hero {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 165px 1fr;
   gap: 2.5rem;
   align-items: center;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 3rem;
+  padding: 2.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 3.25rem;
 }
 
 .profile-photo-placeholder {
-  width: 160px;
-  height: 160px;
+  width: 165px;
+  height: 165px;
   border-radius: 50%;
-  background-color: var(--bg-secondary);
-  border: 2px dashed var(--border-color);
+  background-color: var(--bg-primary);
+  border: 2px dashed var(--accent-terracotta);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 1rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 500;
   overflow: hidden;
@@ -131,16 +143,16 @@ main {
 }
 
 .about-content h1 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 
 .about-subtitle {
   font-size: 1.05rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--accent-terracotta);
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -161,7 +173,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
+  padding: 0.65rem 1.3rem;
   border-radius: var(--radius);
   font-size: 0.9rem;
   font-weight: 600;
@@ -171,24 +183,26 @@ main {
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
+  background-color: var(--accent-sage);
   color: #ffffff;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--accent-sage);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--accent-sage-hover);
+  border-color: var(--accent-sage-hover);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background-color: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
 }
 
 .btn-outline:hover {
-  border-color: var(--text-primary);
-  background-color: var(--bg-secondary);
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  background-color: var(--bg-primary);
 }
 
 /* Section Divider Header on Home */
@@ -198,22 +212,22 @@ main {
 
 .section-eyebrow {
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+  letter-spacing: 0.09em;
+  color: var(--accent-terracotta);
   margin-bottom: 0.35rem;
 }
 
 .section-heading-block h2 {
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .section-heading-block p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   margin-top: 0.35rem;
 }
 
@@ -228,8 +242,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-top: 4px solid var(--accent-sage);
   border-radius: var(--radius);
   padding: 2rem;
   text-decoration: none;
@@ -239,24 +254,24 @@ main {
 
 .divider-card:hover {
   transform: translateY(-3px);
-  border-color: var(--text-primary);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  border-color: var(--accent-terracotta);
+  border-top-color: var(--accent-terracotta);
+  box-shadow: 0 12px 26px rgba(60, 45, 30, 0.08);
 }
 
 .divider-number {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--accent-terracotta);
   margin-bottom: 0.75rem;
   display: inline-block;
 }
 
 .divider-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
   margin-bottom: 0.65rem;
   color: var(--text-primary);
 }
@@ -270,10 +285,14 @@ main {
 .divider-cta {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--accent-sage);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+.divider-card:hover .divider-cta {
+  color: var(--accent-terracotta);
 }
 
 /* Individual Outcome Page Styling */
@@ -292,37 +311,39 @@ main {
 }
 
 .breadcrumb a:hover {
-  color: var(--text-primary);
+  color: var(--accent-terracotta);
 }
 
 .outcome-divider-banner {
-  background-color: var(--text-primary);
-  color: #ffffff;
+  background-color: var(--accent-sage);
+  color: #fbf8f3;
   padding: 2.75rem 2.5rem;
   border-radius: var(--radius);
+  border-left: 6px solid var(--accent-terracotta);
   margin-bottom: 2.5rem;
+  box-shadow: 0 8px 20px rgba(61, 90, 69, 0.12);
 }
 
 .outcome-divider-banner .divider-label {
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #bbbbbb;
+  color: #dfeadf;
   font-weight: 700;
   display: block;
   margin-bottom: 0.5rem;
 }
 
 .outcome-divider-banner h1 {
-  font-size: 2.1rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 2.15rem;
+  font-weight: 700;
   margin-bottom: 0.6rem;
+  color: #ffffff;
 }
 
 .outcome-divider-banner p {
   font-size: 1.05rem;
-  color: #e0e0e0;
+  color: #eef3ee;
   max-width: 700px;
 }
 
@@ -331,7 +352,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 2px solid var(--text-primary);
+  border-bottom: 2px solid var(--accent-sage);
   padding-bottom: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
@@ -339,14 +360,15 @@ main {
 }
 
 .page-section-title h2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  color: var(--text-primary);
 }
 
 .page-section-title span {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--accent-terracotta);
+  font-weight: 600;
 }
 
 /* Artifact Grid (Pictures & Documents) */
@@ -361,9 +383,10 @@ main {
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   overflow: hidden;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-card);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 12px rgba(60, 45, 30, 0.04);
 }
 
 .image-placeholder {
@@ -374,19 +397,19 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   padding: 1.5rem;
   text-align: center;
 }
 
 .image-placeholder code {
-  margin-top: 0.4rem;
+  margin-top: 0.45rem;
   font-size: 0.78rem;
   background: var(--bg-tertiary);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 4px;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .artifact-body {
@@ -401,18 +424,19 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--accent-terracotta);
   margin-bottom: 0.4rem;
 }
 
 .artifact-body h3 {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .artifact-body p {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
   flex: 1;
@@ -423,35 +447,36 @@ main {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 1.85rem;
   margin-bottom: 2.5rem;
 }
 
 .documents-box h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
+  color: var(--text-primary);
 }
 
 .documents-box > p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
 }
 
 .doc-list {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.8rem;
 }
 
 .doc-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   padding: 1rem 1.25rem;
-  border-radius: 6px;
+  border-radius: 8px;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -468,10 +493,10 @@ main {
 }
 
 /* Page Bottom Navigation */
-.page- bottom-nav {
+.page-bottom-nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border-color);
   gap: 1rem;
   flex-wrap: wrap;
@@ -493,6 +518,7 @@ main {
     grid-template-columns: 1fr;
     text-align: left;
     gap: 1.5rem;
+    padding: 1.75rem;
   }
   .divider-grid,
   .artifacts-grid {
