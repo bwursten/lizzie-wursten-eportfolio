@@ -15,10 +15,12 @@ lizzie-wursten-eportfolio/
 
 How to Add Your Pictures:
 -------------------------
-1. Copy your image files into the `images/` folder.
+1. Resize each photo to about 800px wide (saves load time), then copy it into the `images/` folder.
 2. Open any `.html` file in a text editor (like VS Code, TextEdit, or Notepad).
 3. Find `<div class="image-placeholder">...</div>` and replace that block with:
-   <img src="images/your-photo.jpg" alt="Description of photo" style="width:100%; height:220px; object-fit:cover;">
+   <img src="images/your-photo.jpg" alt="Description of photo" class="artifact-img" width="800" height="220" loading="lazy">
+   (Don't use style="..." attributes - the site's security policy blocks inline styles.
+   Put styling in styles.css instead.)
 
 How to Add Your Documents:
 --------------------------
