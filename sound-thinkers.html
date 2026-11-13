@@ -6,6 +6,7 @@
   <title>Sound Thinkers | Lizzie Wursten Eportfolio</title>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js" defer></script>
 </head>
 <body>
 
@@ -13,11 +14,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="site-title">Lizzie Wursten Eportfolio</a>
-      <nav aria-label="Main Navigation">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" hidden>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav id="main-nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="disciples-of-jesus-christ.html" >Disciples of Jesus Christ</a></li>
-          <li><a href="sound-thinkers.html" class='active'>Sound Thinkers</a></li>
+          <li><a href="sound-thinkers.html" class="active" aria-current="page">Sound Thinkers</a></li>
           <li><a href="effective-communicators.html" >Effective Communicators</a></li>
           <li><a href="skilled-collaborators.html" >Skilled Collaborators</a></li>
         </ul>
